@@ -1,6 +1,6 @@
 USE TYPING
 select * from LECCION
-
+/*INSERTANDO LAS PRIMERAS LECCIONES*/
 --nivel 1
 INSERT INTO LECCION VALUES(1,'asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj
 asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj

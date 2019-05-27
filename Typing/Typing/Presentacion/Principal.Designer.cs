@@ -82,6 +82,7 @@
             this.btnAdminUsuarios.TabIndex = 4;
             this.btnAdminUsuarios.Text = "Admin. Usuarios";
             this.btnAdminUsuarios.UseVisualStyleBackColor = true;
+            this.btnAdminUsuarios.Click += new System.EventHandler(this.btnAdminUsuarios_Click);
             // 
             // btnEjercitar
             // 
