@@ -17,8 +17,7 @@ namespace Typing.Presentacion
             InitializeComponent();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
+        private void btnNuevo_Click(object sender, EventArgs e){
             FormAdminUsuarioModo frmUsuario = new FormAdminUsuarioModo();
             frmUsuario.ShowDialog();
         }

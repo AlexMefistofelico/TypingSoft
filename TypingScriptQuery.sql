@@ -141,4 +141,4 @@ tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu
 --INSERT INTO LECCION VALUES(27,'',90);
 --INSERT INTO LECCION VALUES(28,'',90);
 
-
+select * from USUARIO
