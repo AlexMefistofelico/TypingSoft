@@ -74,7 +74,7 @@ namespace Typing.Presentacion
 
         private void labelLeccion_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

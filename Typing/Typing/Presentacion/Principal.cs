@@ -65,7 +65,8 @@ namespace Typing.Presentacion {
 
         private void btnEjercitar_Click(object sender, EventArgs e)
         {
-
+            FormEjercitar frmEjercitar = new FormEjercitar();
+            frmEjercitar.Show();
         }
 
         private void btnLecciones_Click(object sender, EventArgs e)

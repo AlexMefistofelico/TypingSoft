@@ -62,6 +62,7 @@
             this.textBoxParrafo.Location = new System.Drawing.Point(164, 25);
             this.textBoxParrafo.Multiline = true;
             this.textBoxParrafo.Name = "textBoxParrafo";
+            this.textBoxParrafo.ReadOnly = true;
             this.textBoxParrafo.Size = new System.Drawing.Size(450, 186);
             this.textBoxParrafo.TabIndex = 2;
             // 

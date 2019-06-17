@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEjercitar));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.checkBoxPulsarTecla = new System.Windows.Forms.CheckBox();
             this.checkBoxOcultarTeclado = new System.Windows.Forms.CheckBox();
             this.checkBoxDedos = new System.Windows.Forms.CheckBox();
+            this.richTextBoxPrincipal = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeclado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -113,12 +115,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(595, 13);
+            this.button1.Location = new System.Drawing.Point(601, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPrincipal
             // 
@@ -127,12 +130,15 @@
             this.txtPrincipal.Name = "txtPrincipal";
             this.txtPrincipal.Size = new System.Drawing.Size(589, 211);
             this.txtPrincipal.TabIndex = 7;
+            this.txtPrincipal.Visible = false;
             // 
             // pictureBoxTeclado
             // 
+            this.pictureBoxTeclado.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTeclado.Image")));
             this.pictureBoxTeclado.Location = new System.Drawing.Point(12, 275);
             this.pictureBoxTeclado.Name = "pictureBoxTeclado";
             this.pictureBoxTeclado.Size = new System.Drawing.Size(479, 153);
+            this.pictureBoxTeclado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTeclado.TabIndex = 8;
             this.pictureBoxTeclado.TabStop = false;
             // 
@@ -270,11 +276,28 @@
             this.checkBoxDedos.Text = "Dedos Utilizados";
             this.checkBoxDedos.UseVisualStyleBackColor = true;
             // 
+            // richTextBoxPrincipal
+            // 
+            this.richTextBoxPrincipal.BackColor = System.Drawing.Color.White;
+            this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
+            this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPrincipal.Location = new System.Drawing.Point(15, 45);
+            this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
+            this.richTextBoxPrincipal.ReadOnly = true;
+            this.richTextBoxPrincipal.Size = new System.Drawing.Size(589, 211);
+            this.richTextBoxPrincipal.TabIndex = 23;
+            this.richTextBoxPrincipal.Text = "";
+            this.richTextBoxPrincipal.TextChanged += new System.EventHandler(this.richTextBoxPrincipal_TextChanged);
+            this.richTextBoxPrincipal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBoxPrincipal_KeyPress);
+            this.richTextBoxPrincipal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.richTextBoxPrincipal_KeyUp);
+            // 
             // FormEjercitar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 520);
+            this.Controls.Add(this.richTextBoxPrincipal);
             this.Controls.Add(this.btnReloj);
             this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.lblErrores);
@@ -302,6 +325,9 @@
             this.Name = "FormEjercitar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEjercitar";
+            this.Load += new System.EventHandler(this.FormEjercitar_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormEjercitar_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormEjercitar_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeclado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -335,5 +361,6 @@
         private System.Windows.Forms.CheckBox checkBoxPulsarTecla;
         private System.Windows.Forms.CheckBox checkBoxOcultarTeclado;
         private System.Windows.Forms.CheckBox checkBoxDedos;
+        private System.Windows.Forms.RichTextBox richTextBoxPrincipal;
     }
 }
