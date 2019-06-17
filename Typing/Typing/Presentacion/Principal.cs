@@ -70,7 +70,8 @@ namespace Typing.Presentacion {
 
         private void btnLecciones_Click(object sender, EventArgs e)
         {
-
+            FormLecciones frmLecciones = new FormLecciones();
+            frmLecciones.ShowDialog();
         }
     }
 }

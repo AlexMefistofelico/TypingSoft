@@ -40,51 +40,55 @@
             // listBoxNivel
             // 
             this.listBoxNivel.FormattingEnabled = true;
-            this.listBoxNivel.Location = new System.Drawing.Point(32, 58);
+            this.listBoxNivel.Location = new System.Drawing.Point(23, 58);
             this.listBoxNivel.Name = "listBoxNivel";
             this.listBoxNivel.ScrollAlwaysVisible = true;
-            this.listBoxNivel.Size = new System.Drawing.Size(58, 186);
+            this.listBoxNivel.Size = new System.Drawing.Size(53, 186);
             this.listBoxNivel.TabIndex = 0;
+            this.listBoxNivel.SelectedIndexChanged += new System.EventHandler(this.listBoxNivel_SelectedIndexChanged);
             // 
             // listBoxLeccion
             // 
             this.listBoxLeccion.FormattingEnabled = true;
-            this.listBoxLeccion.Location = new System.Drawing.Point(110, 58);
+            this.listBoxLeccion.Location = new System.Drawing.Point(88, 58);
             this.listBoxLeccion.Name = "listBoxLeccion";
             this.listBoxLeccion.ScrollAlwaysVisible = true;
-            this.listBoxLeccion.Size = new System.Drawing.Size(59, 186);
+            this.listBoxLeccion.Size = new System.Drawing.Size(53, 186);
             this.listBoxLeccion.TabIndex = 1;
+            this.listBoxLeccion.SelectedIndexChanged += new System.EventHandler(this.listBoxLeccion_SelectedIndexChanged);
             // 
             // textBoxParrafo
             // 
-            this.textBoxParrafo.Location = new System.Drawing.Point(201, 34);
+            this.textBoxParrafo.Location = new System.Drawing.Point(164, 25);
             this.textBoxParrafo.Multiline = true;
             this.textBoxParrafo.Name = "textBoxParrafo";
-            this.textBoxParrafo.Size = new System.Drawing.Size(569, 186);
+            this.textBoxParrafo.Size = new System.Drawing.Size(450, 186);
             this.textBoxParrafo.TabIndex = 2;
             // 
             // btnRealizar
             // 
-            this.btnRealizar.Location = new System.Drawing.Point(298, 251);
+            this.btnRealizar.Location = new System.Drawing.Point(296, 226);
             this.btnRealizar.Name = "btnRealizar";
             this.btnRealizar.Size = new System.Drawing.Size(75, 40);
             this.btnRealizar.TabIndex = 3;
             this.btnRealizar.Text = "Realizar";
             this.btnRealizar.UseVisualStyleBackColor = true;
+            this.btnRealizar.Click += new System.EventHandler(this.btnRealizar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(392, 251);
+            this.btnSalir.Location = new System.Drawing.Point(390, 226);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 40);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
-            this.lblNivel.Location = new System.Drawing.Point(29, 25);
+            this.lblNivel.Location = new System.Drawing.Point(20, 25);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(31, 13);
             this.lblNivel.TabIndex = 5;
@@ -93,17 +97,18 @@
             // labelLeccion
             // 
             this.labelLeccion.AutoSize = true;
-            this.labelLeccion.Location = new System.Drawing.Point(107, 25);
+            this.labelLeccion.Location = new System.Drawing.Point(85, 25);
             this.labelLeccion.Name = "labelLeccion";
             this.labelLeccion.Size = new System.Drawing.Size(45, 13);
             this.labelLeccion.TabIndex = 6;
             this.labelLeccion.Text = "Leccion";
+            this.labelLeccion.Click += new System.EventHandler(this.labelLeccion_Click);
             // 
             // FormLecciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 316);
+            this.ClientSize = new System.Drawing.Size(636, 280);
             this.Controls.Add(this.labelLeccion);
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.btnSalir);
