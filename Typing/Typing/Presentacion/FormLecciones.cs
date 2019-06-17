@@ -17,6 +17,9 @@ namespace Typing.Presentacion
             InitializeComponent();
         }
 
-
+        private void FormLecciones_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

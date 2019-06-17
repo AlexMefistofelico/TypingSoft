@@ -157,6 +157,7 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormAdminUsuarioModo
             // 
@@ -172,6 +173,7 @@
             this.Name = "FormAdminUsuarioModo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdminUsuarioModo";
+            this.Load += new System.EventHandler(this.FormAdminUsuarioModo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

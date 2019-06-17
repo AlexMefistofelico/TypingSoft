@@ -115,6 +115,7 @@
             this.Name = "FormLecciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLecciones";
+            this.Load += new System.EventHandler(this.FormLecciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

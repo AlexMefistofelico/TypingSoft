@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.tYPINGDataSet = new Typing.TYPINGDataSet();
+            this.uSUARIOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSUARIOTableAdapter = new Typing.TYPINGDataSetTableAdapters.USUARIOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPINGDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewUsuarios
             // 
+            this.dataGridViewUsuarios.AllowUserToAddRows = false;
+            this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
+            this.dataGridViewUsuarios.AllowUserToResizeRows = false;
+            this.dataGridViewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuarios.Location = new System.Drawing.Point(21, 25);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
+            this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(511, 178);
             this.dataGridViewUsuarios.TabIndex = 0;
             // 
@@ -71,6 +83,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCancel
             // 
@@ -80,6 +93,21 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tYPINGDataSet
+            // 
+            this.tYPINGDataSet.DataSetName = "TYPINGDataSet";
+            this.tYPINGDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uSUARIOBindingSource
+            // 
+            this.uSUARIOBindingSource.DataMember = "USUARIO";
+            this.uSUARIOBindingSource.DataSource = this.tYPINGDataSet;
+            // 
+            // uSUARIOTableAdapter
+            // 
+            this.uSUARIOTableAdapter.ClearBeforeFill = true;
             // 
             // FormAdminUsuario
             // 
@@ -95,7 +123,10 @@
             this.Name = "FormAdminUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdminUsuario";
+            this.Load += new System.EventHandler(this.FormAdminUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPINGDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSUARIOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,5 +138,8 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancel;
+        private TYPINGDataSet tYPINGDataSet;
+        private System.Windows.Forms.BindingSource uSUARIOBindingSource;
+        private TYPINGDataSetTableAdapters.USUARIOTableAdapter uSUARIOTableAdapter;
     }
 }

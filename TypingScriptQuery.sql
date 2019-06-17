@@ -140,5 +140,7 @@ tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu
 ',90);
 --INSERT INTO LECCION VALUES(27,'',90);
 --INSERT INTO LECCION VALUES(28,'',90);
+Insert into USUARIO values (1,6,'Maste'); 
 
-select * from USUARIO
+update USUARIO set Nombre = 'Master' where UsuarioID = 1
+delete from USUARIO where UsuarioID = 2

@@ -21,17 +21,10 @@ namespace Typing.Presentacion
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Length>2)
-            {
+            if (txtNombre.Text.Length>2){
                 using (TYPINGEntities db = new TYPINGEntities()){
                     USUARIO usuario = null;
                     try
-                    {
-                       usuario = new USUARIO { UsuarioID = 1, Nombre = "Master", Modo = 6 };
-                        db.USUARIO.Add(usuario);
-                        db.SaveChanges();
-                    }
-                    catch (Exception ex)
                     {
                         int modo = 0;
                         if (radioButton1.Checked) modo = 1;
@@ -40,20 +33,31 @@ namespace Typing.Presentacion
                         if (radioButton4.Checked) modo = 4;
                         if (radioButton5.Checked) modo = 5;
                         if (radioButton6.Checked) modo = 6;
-                        
-                        usuario = new USUARIO { UsuarioID = 1234, Nombre = txtNombre.Text, Modo = modo };
+                        usuario = new USUARIO { UsuarioID = db.USUARIO.Select(x => x.UsuarioID).Max()+1, Nombre = txtNombre.Text, Modo = modo };
                         db.USUARIO.Add(usuario);
                         db.SaveChanges();
-                    }
 
-                    //db.USUARIO.Add(usuario);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocurrio Un Error\n(No Se Ingreso Usuario)...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
-            }
-            else
-            {
+            }else{
                 MessageBox.Show("Ingresa Nombre VAlido...","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void FormAdminUsuarioModo_Load(object sender, EventArgs e)
+        {
+            radioButton1.Checked = true;
         }
     }
 }

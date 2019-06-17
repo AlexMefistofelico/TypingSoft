@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Typing.Modelo;
 namespace Typing.Presentacion {
     public partial class Principal : Form
     {
@@ -18,10 +18,19 @@ namespace Typing.Presentacion {
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            asignarColorPanel(pnlPrincipal,Color.Cyan);//panel mayor
+            asignarColorPanel(pnlPrincipal, Color.Cyan);//panel mayor
             asignarColorPanel(pnlColor1, Color.Red);
-            asignarColorPanel(pnlColor2,RGB(4,5,6));
-            asignarColorPanel(pnlColor3, RGB(55,77,88));
+            asignarColorPanel(pnlColor2, RGB(4, 5, 6));
+            asignarColorPanel(pnlColor3, RGB(55, 77, 88));
+
+            using (TYPINGEntities db = new TYPINGEntities())
+            {
+                var reg = db.USUARIO.Where(x => x.UsuarioID == 1).FirstOrDefault();
+                lblUsuario.Text = reg.Nombre;
+                lblNivel.Text = reg.Modo.ToString();
+                lblLeccion.Text = "-";
+                lblPPM.Text = "123";
+            }
 
         }
 
@@ -52,6 +61,16 @@ namespace Typing.Presentacion {
         {
             FormAdminUsuario frmAdminUsuario = new FormAdminUsuario();
             frmAdminUsuario.ShowDialog();
+        }
+
+        private void btnEjercitar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLecciones_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

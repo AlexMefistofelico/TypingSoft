@@ -92,6 +92,7 @@
             this.btnEjercitar.TabIndex = 5;
             this.btnEjercitar.Text = " Ejercitar";
             this.btnEjercitar.UseVisualStyleBackColor = true;
+            this.btnEjercitar.Click += new System.EventHandler(this.btnEjercitar_Click);
             // 
             // btnLecciones
             // 
@@ -101,6 +102,7 @@
             this.btnLecciones.TabIndex = 6;
             this.btnLecciones.Text = "Lecciones";
             this.btnLecciones.UseVisualStyleBackColor = true;
+            this.btnLecciones.Click += new System.EventHandler(this.btnLecciones_Click);
             // 
             // label1
             // 
