@@ -1,12 +1,8 @@
 USE TYPING
-select * from LECCION
+select count(*) from LECCION
 /*INSERTANDO LAS PRIMERAS LECCIONES*/
 --nivel 1
-INSERT INTO LECCION VALUES(1,'asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj
-asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj
-asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj
-asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj
-asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj'
+INSERT INTO LECCION VALUES(1,'asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj\nasdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj\nasdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj\nasdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj\nasdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj asdf ñlkj'
 ,30);
 INSERT INTO LECCION VALUES(2,'asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj
 asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj
@@ -14,6 +10,7 @@ asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj
 asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj
 asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj asdfgf ñlkjhj
 ',30);
+
 INSERT INTO LECCION VALUES(3,'dada dada dada dada dada dada dada dada dada dada dada dada dada
 dada dada dada dada dada dada dada dada dada dada dada dada dada
 dada dada dada dada dada dada dada dada dada dada dada dada dada
@@ -144,3 +141,6 @@ Insert into USUARIO values (1,6,'Maste');
 
 update USUARIO set Nombre = 'Master' where UsuarioID = 1
 delete from USUARIO where UsuarioID = 2
+
+use TYPING
+select * from USUARIO

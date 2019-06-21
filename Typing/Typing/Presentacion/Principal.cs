@@ -48,6 +48,7 @@ namespace Typing.Presentacion {
         public Color RGB(int R,int G,int B)
         {
             return Color.FromArgb(((int)(((byte)(R)))), ((int)(((byte)(G)))), ((int)(((byte)(B)))));
+
         }
         public void asignarColorPanel(Panel panel,Color color){//damos color a los paneles de estadisticas
             panel.BackColor = color;
@@ -73,6 +74,16 @@ namespace Typing.Presentacion {
         {
             FormLecciones frmLecciones = new FormLecciones();
             frmLecciones.ShowDialog();
+        }
+
+        private void btnEjercitar_MouseEnter(object sender, EventArgs e)
+        {
+            //BackColor = Color.Cyan;
+        }
+
+        private void btnEjercitar_MouseLeave(object sender, EventArgs e)
+        {
+            //BackColor = Color.Red;
         }
     }
 }

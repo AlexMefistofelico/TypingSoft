@@ -112,6 +112,7 @@
             this.lblLeccion.Size = new System.Drawing.Size(10, 13);
             this.lblLeccion.TabIndex = 5;
             this.lblLeccion.Text = " ";
+            this.lblLeccion.Click += new System.EventHandler(this.lblLeccion_Click);
             // 
             // button1
             // 
@@ -125,10 +126,10 @@
             // 
             // txtPrincipal
             // 
-            this.txtPrincipal.Location = new System.Drawing.Point(15, 45);
+            this.txtPrincipal.Location = new System.Drawing.Point(15, 110);
             this.txtPrincipal.Multiline = true;
             this.txtPrincipal.Name = "txtPrincipal";
-            this.txtPrincipal.Size = new System.Drawing.Size(589, 211);
+            this.txtPrincipal.Size = new System.Drawing.Size(589, 146);
             this.txtPrincipal.TabIndex = 7;
             this.txtPrincipal.Visible = false;
             // 
@@ -189,6 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(513, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 13);
@@ -212,6 +214,7 @@
             this.lblErrores.Size = new System.Drawing.Size(10, 13);
             this.lblErrores.TabIndex = 17;
             this.lblErrores.Text = " ";
+            this.lblErrores.Click += new System.EventHandler(this.lblErrores_Click);
             // 
             // label11
             // 
@@ -282,13 +285,15 @@
             this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPrincipal.Location = new System.Drawing.Point(15, 45);
+            this.richTextBoxPrincipal.Location = new System.Drawing.Point(15, 46);
             this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
             this.richTextBoxPrincipal.ReadOnly = true;
-            this.richTextBoxPrincipal.Size = new System.Drawing.Size(589, 211);
+            this.richTextBoxPrincipal.Size = new System.Drawing.Size(589, 210);
             this.richTextBoxPrincipal.TabIndex = 23;
             this.richTextBoxPrincipal.Text = "";
             this.richTextBoxPrincipal.TextChanged += new System.EventHandler(this.richTextBoxPrincipal_TextChanged);
+            this.richTextBoxPrincipal.Enter += new System.EventHandler(this.richTextBoxPrincipal_Enter);
+            this.richTextBoxPrincipal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBoxPrincipal_KeyDown);
             this.richTextBoxPrincipal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBoxPrincipal_KeyPress);
             this.richTextBoxPrincipal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.richTextBoxPrincipal_KeyUp);
             // 
@@ -296,7 +301,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 520);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(628, 521);
             this.Controls.Add(this.richTextBoxPrincipal);
             this.Controls.Add(this.btnReloj);
             this.Controls.Add(this.btnReiniciar);

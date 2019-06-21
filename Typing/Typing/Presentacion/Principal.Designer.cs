@@ -93,6 +93,8 @@
             this.btnEjercitar.Text = " Ejercitar";
             this.btnEjercitar.UseVisualStyleBackColor = true;
             this.btnEjercitar.Click += new System.EventHandler(this.btnEjercitar_Click);
+            this.btnEjercitar.MouseEnter += new System.EventHandler(this.btnEjercitar_MouseEnter);
+            this.btnEjercitar.MouseLeave += new System.EventHandler(this.btnEjercitar_MouseLeave);
             // 
             // btnLecciones
             // 
