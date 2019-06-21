@@ -14,7 +14,7 @@ namespace Typing.Presentacion {
         public Principal()
         {
             InitializeComponent();
-        }
+          }
 
         private void Principal_Load(object sender, EventArgs e)
         {
