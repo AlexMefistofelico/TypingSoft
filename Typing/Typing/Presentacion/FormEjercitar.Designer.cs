@@ -142,14 +142,22 @@
             this.pictureBoxTeclado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTeclado.TabIndex = 8;
             this.pictureBoxTeclado.TabStop = false;
+            this.pictureBoxTeclado.Click += new System.EventHandler(this.pictureBoxTeclado_Click);
+            this.pictureBoxTeclado.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxTeclado_Paint);
+            this.pictureBoxTeclado.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxTeclado_MouseClick);
+            this.pictureBoxTeclado.MouseEnter += new System.EventHandler(this.pictureBoxTeclado_MouseEnter);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(192, 438);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(140, 427);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(178, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // label5
             // 
@@ -233,6 +241,7 @@
             this.btnReiniciar.TabIndex = 18;
             this.btnReiniciar.Text = "Reinicio";
             this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // btnReloj
             // 
@@ -242,6 +251,7 @@
             this.btnReloj.TabIndex = 19;
             this.btnReloj.Text = "Reloj";
             this.btnReloj.UseVisualStyleBackColor = true;
+            this.btnReloj.Click += new System.EventHandler(this.btnReloj_Click);
             // 
             // checkBoxPulsarTecla
             // 

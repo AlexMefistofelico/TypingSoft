@@ -135,6 +135,17 @@ INSERT INTO LECCION VALUES(26,'tribu tribu tribu tribu tribu tribu tribu tribu t
 tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu
 tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu tribu
 ',90);
+
+INSERT INTO LECCION VALUES(27,'abcdefghijklmnñopqrstuvwxyz. abcdefghijklmnñopqrstuvwxyz.
+abcdefghijklmnñopqrstuvwxyz. abcdefghijklmnñopqrstuvwxyz.
+abcdefghijklmnñopqrstuvwxyz. abcdefghijklmnñopqrstuvwxyz.
+',90);
+
+INSERT INTO LECCION VALUES(28,'zyxwvutsrqpoñnmlkjihgfedcba. zyxwvutsrqpoñnmlkjihgfedcba.
+zyxwvutsrqpoñnmlkjihgfedcba. zyxwvutsrqpoñnmlkjihgfedcba.
+zyxwvutsrqpoñnmlkjihgfedcba. zyxwvutsrqpoñnmlkjihgfedcba.
+',90);
+
 --INSERT INTO LECCION VALUES(27,'',90);
 --INSERT INTO LECCION VALUES(28,'',90);
 Insert into USUARIO values (1,6,'Maste'); 
@@ -144,3 +155,4 @@ delete from USUARIO where UsuarioID = 2
 
 use TYPING
 select * from USUARIO
+select * from LECCION
