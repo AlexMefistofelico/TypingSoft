@@ -19,6 +19,7 @@ namespace Typing.Presentacion
             InitializeComponent();
         }
 
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Length>2){

@@ -37,7 +37,6 @@
             this.lblNivel = new System.Windows.Forms.Label();
             this.lblLeccion = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtPrincipal = new System.Windows.Forms.TextBox();
             this.pictureBoxTeclado = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -123,15 +122,6 @@
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtPrincipal
-            // 
-            this.txtPrincipal.Location = new System.Drawing.Point(15, 110);
-            this.txtPrincipal.Multiline = true;
-            this.txtPrincipal.Name = "txtPrincipal";
-            this.txtPrincipal.Size = new System.Drawing.Size(589, 146);
-            this.txtPrincipal.TabIndex = 7;
-            this.txtPrincipal.Visible = false;
             // 
             // pictureBoxTeclado
             // 
@@ -294,11 +284,11 @@
             this.richTextBoxPrincipal.BackColor = System.Drawing.Color.White;
             this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
-            this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPrincipal.Location = new System.Drawing.Point(15, 46);
+            this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPrincipal.Location = new System.Drawing.Point(12, 34);
             this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
             this.richTextBoxPrincipal.ReadOnly = true;
-            this.richTextBoxPrincipal.Size = new System.Drawing.Size(589, 210);
+            this.richTextBoxPrincipal.Size = new System.Drawing.Size(605, 220);
             this.richTextBoxPrincipal.TabIndex = 23;
             this.richTextBoxPrincipal.Text = "";
             this.richTextBoxPrincipal.TextChanged += new System.EventHandler(this.richTextBoxPrincipal_TextChanged);
@@ -326,7 +316,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxTeclado);
-            this.Controls.Add(this.txtPrincipal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblLeccion);
             this.Controls.Add(this.lblNivel);
@@ -360,7 +349,6 @@
         private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.Label lblLeccion;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtPrincipal;
         private System.Windows.Forms.PictureBox pictureBoxTeclado;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;

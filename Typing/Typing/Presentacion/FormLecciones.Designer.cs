@@ -40,7 +40,7 @@
             // listBoxNivel
             // 
             this.listBoxNivel.FormattingEnabled = true;
-            this.listBoxNivel.Location = new System.Drawing.Point(23, 58);
+            this.listBoxNivel.Location = new System.Drawing.Point(12, 58);
             this.listBoxNivel.Name = "listBoxNivel";
             this.listBoxNivel.ScrollAlwaysVisible = true;
             this.listBoxNivel.Size = new System.Drawing.Size(53, 186);
@@ -50,7 +50,7 @@
             // listBoxLeccion
             // 
             this.listBoxLeccion.FormattingEnabled = true;
-            this.listBoxLeccion.Location = new System.Drawing.Point(88, 58);
+            this.listBoxLeccion.Location = new System.Drawing.Point(77, 58);
             this.listBoxLeccion.Name = "listBoxLeccion";
             this.listBoxLeccion.ScrollAlwaysVisible = true;
             this.listBoxLeccion.Size = new System.Drawing.Size(53, 186);
@@ -59,11 +59,12 @@
             // 
             // textBoxParrafo
             // 
-            this.textBoxParrafo.Location = new System.Drawing.Point(164, 25);
+            this.textBoxParrafo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxParrafo.Location = new System.Drawing.Point(136, 12);
             this.textBoxParrafo.Multiline = true;
             this.textBoxParrafo.Name = "textBoxParrafo";
             this.textBoxParrafo.ReadOnly = true;
-            this.textBoxParrafo.Size = new System.Drawing.Size(450, 186);
+            this.textBoxParrafo.Size = new System.Drawing.Size(488, 208);
             this.textBoxParrafo.TabIndex = 2;
             // 
             // btnRealizar
@@ -109,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 280);
+            this.ClientSize = new System.Drawing.Size(636, 271);
             this.Controls.Add(this.labelLeccion);
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.btnSalir);

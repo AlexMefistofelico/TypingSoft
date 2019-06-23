@@ -17,9 +17,10 @@ namespace Typing.Presentacion
         public Color ClCorrecto, ClError;
         public Pen lapizTeclado, lapizMano;
         public int x_teclado, y_teclado, x_mano, y_mano, x_t, y_t, x_m, y_m;
-        public bool dobleTecla;
+        public bool dobleTecla,llamadaInterna;
         public FormEjercitar()
         {
+            llamadaInterna = true;
             lapizTeclado = new Pen(Color.Orange, 8);
             lapizMano = new Pen(Color.Cyan, 6);
 
@@ -27,9 +28,9 @@ namespace Typing.Presentacion
         }
 
         private void button1_Click(object sender, EventArgs e) { this.Close(); }
-
-        private void FormEjercitar_Load(object sender, EventArgs e)
+        public void cargarInicio()
         {
+            llamadaInterna = true;
             ClCorrecto = Color.Cyan;
             ClError = Color.Red;
             Indice = PulsaCorrectos = PulsaErrores = 0;
@@ -50,6 +51,45 @@ namespace Typing.Presentacion
             dibujar(parrafo[Indice]);//mandamos el char marcado para tipear para saber con que dedos hacerlo...                                    
             dibujarEnTeclado();
             dibujarEnMano();
+            richTextBoxPrincipal.Select(0,parrafo.Length);
+            richTextBoxPrincipal.SelectionColor = Color.Black;
+        }
+        public void cargarInicio(string p,int niv,int lec)
+        {
+            llamadaInterna = false;
+            lblNivel.Text = niv.ToString();
+            lblLeccion.Text = lec.ToString();
+            lblUsuario.Text = "Anonimo";
+
+            ClCorrecto = Color.Cyan;
+            ClError = Color.Red;
+            Indice = PulsaCorrectos = PulsaErrores = 0;
+            parrafo = p.Replace("\r\n", "\n");
+            richTextBoxPrincipal.Text = parrafo;
+            /***si es un caracter***/
+            dobleTecla = Char.IsUpper(parrafo[0]) ||
+                                 parrafo[0] == 'á' ||
+                                 parrafo[0] == 'é' ||
+                                 parrafo[0] == 'í' ||
+                                 parrafo[0] == 'ó' ||
+                                 parrafo[0] == 'ú';
+            //la primera tecla a tipear
+            dibujar(parrafo[Indice]);//mandamos el char marcado para tipear para saber con que dedos hacerlo...                                    
+            dibujarEnTeclado();
+            dibujarEnMano();
+            richTextBoxPrincipal.Select(0, parrafo.Length);
+            richTextBoxPrincipal.SelectionColor = Color.Black;
+        }
+        private void FormEjercitar_Load(object sender, EventArgs e)
+        {
+            if (llamadaInterna)
+            {
+                cargarInicio();
+            }
+            else
+            {
+                cargarInicio(parrafo,Convert.ToInt32(lblNivel.Text), Convert.ToInt32(lblNivel.Text));
+            }
         }
         private void setT(int x, int y)//solo para reducir codigo 
         {
@@ -254,6 +294,7 @@ namespace Typing.Presentacion
             dibujarEnTeclado();
             dibujarEnMano();
         }
+
         public void dibujarEnTeclado(){
             pictureBoxTeclado.Image = pictureBoxTeclado.Image;
             pictureBoxTeclado_Paint(new object(), new PaintEventArgs(pictureBoxTeclado.CreateGraphics(), new Rectangle()));
@@ -287,6 +328,14 @@ namespace Typing.Presentacion
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
+            if (llamadaInterna)
+            {
+                cargarInicio();
+            }
+            else
+            {
+                cargarInicio(parrafo,Convert.ToInt32(lblNivel.Text),Convert.ToInt32(lblLeccion));
+            }
         }
 
         private void pictureBoxTeclado_MouseEnter(object sender, EventArgs e)

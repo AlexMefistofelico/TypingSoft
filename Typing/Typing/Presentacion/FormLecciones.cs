@@ -69,7 +69,9 @@ namespace Typing.Presentacion
 
         private void btnRealizar_Click(object sender, EventArgs e)
         {
-
+            FormEjercitar frmEjercitar = new FormEjercitar();
+            frmEjercitar.cargarInicio(textBoxParrafo.Text,NivelActual,idActual);
+            frmEjercitar.ShowDialog();
         }
 
         private void labelLeccion_Click(object sender, EventArgs e)
