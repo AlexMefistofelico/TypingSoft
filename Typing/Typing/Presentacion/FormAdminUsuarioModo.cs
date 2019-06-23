@@ -60,5 +60,10 @@ namespace Typing.Presentacion
         {
             radioButton1.Checked = true;
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

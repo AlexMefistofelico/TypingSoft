@@ -170,7 +170,7 @@
             // lblAConseguir
             // 
             this.lblAConseguir.AutoSize = true;
-            this.lblAConseguir.Location = new System.Drawing.Point(569, 357);
+            this.lblAConseguir.Location = new System.Drawing.Point(572, 357);
             this.lblAConseguir.Name = "lblAConseguir";
             this.lblAConseguir.Size = new System.Drawing.Size(10, 13);
             this.lblAConseguir.TabIndex = 15;
@@ -179,7 +179,7 @@
             // lblPPM
             // 
             this.lblPPM.AutoSize = true;
-            this.lblPPM.Location = new System.Drawing.Point(513, 357);
+            this.lblPPM.Location = new System.Drawing.Point(523, 357);
             this.lblPPM.Name = "lblPPM";
             this.lblPPM.Size = new System.Drawing.Size(10, 13);
             this.lblPPM.TabIndex = 14;
@@ -207,7 +207,7 @@
             // lblErrores
             // 
             this.lblErrores.AutoSize = true;
-            this.lblErrores.Location = new System.Drawing.Point(533, 415);
+            this.lblErrores.Location = new System.Drawing.Point(513, 415);
             this.lblErrores.Name = "lblErrores";
             this.lblErrores.Size = new System.Drawing.Size(10, 13);
             this.lblErrores.TabIndex = 17;
@@ -242,6 +242,11 @@
             this.btnReloj.Text = "Reloj";
             this.btnReloj.UseVisualStyleBackColor = true;
             this.btnReloj.Click += new System.EventHandler(this.btnReloj_Click);
+            // 
+            // tmrTiempo
+            // 
+            this.tmrTiempo.Interval = 1000;
+            this.tmrTiempo.Tick += new System.EventHandler(this.tmrTiempo_Tick);
             // 
             // checkBoxPulsarTecla
             // 
@@ -285,10 +290,10 @@
             this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPrincipal.Location = new System.Drawing.Point(12, 34);
+            this.richTextBoxPrincipal.Location = new System.Drawing.Point(13, 41);
             this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
             this.richTextBoxPrincipal.ReadOnly = true;
-            this.richTextBoxPrincipal.Size = new System.Drawing.Size(605, 220);
+            this.richTextBoxPrincipal.Size = new System.Drawing.Size(605, 223);
             this.richTextBoxPrincipal.TabIndex = 23;
             this.richTextBoxPrincipal.Text = "";
             this.richTextBoxPrincipal.TextChanged += new System.EventHandler(this.richTextBoxPrincipal_TextChanged);

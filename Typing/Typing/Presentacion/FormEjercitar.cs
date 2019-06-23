@@ -16,10 +16,11 @@ namespace Typing.Presentacion
         public int Indice, PulsaCorrectos, PulsaErrores;
         public Color ClCorrecto, ClError;
         public Pen lapizTeclado, lapizMano;
-        public int x_teclado, y_teclado, x_mano, y_mano, x_t, y_t, x_m, y_m;
+        public int x_teclado, y_teclado, x_mano, y_mano, x_t, y_t, x_m, y_m,segundos;
         public bool dobleTecla,llamadaInterna;
         public FormEjercitar()
         {
+            segundos = 0;
             llamadaInterna = true;
             lapizTeclado = new Pen(Color.Orange, 8);
             lapizMano = new Pen(Color.Cyan, 6);
@@ -82,6 +83,7 @@ namespace Typing.Presentacion
         }
         private void FormEjercitar_Load(object sender, EventArgs e)
         {
+            limpiarLabels();
             if (llamadaInterna)
             {
                 cargarInicio();
@@ -100,6 +102,10 @@ namespace Typing.Presentacion
         {
             x_mano = x;
             y_mano = y;
+        }
+        private void limpiarLabels()
+        {
+            lblAConseguir.Text = lblErrores.Text = lblPPM.Text = lblPulsacionesTotales.Text = "0";
         }
         private void dibujar(char caracter)
         {
@@ -269,11 +275,15 @@ namespace Typing.Presentacion
         }
         private void richTextBoxPrincipal_KeyPress(object sender, KeyPressEventArgs e) {
             if (Indice == parrafo.Length) {
+                tmrTiempo.Enabled = false;
+                lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
                 return;
-                
             }
+            if (!tmrTiempo.Enabled) tmrTiempo.Enabled = true;//avilitar al teclear relog...
             if (Indice==0){//si es el primer caracter seleccion por adelantado
+                tmrTiempo.Enabled = true;
                 richTextBoxPrincipal.Select(Indice, 1);
+                
             }
             //lblUsuario.Text = "+"+Indice+"+"+e.KeyChar+"+"+parrafo[Indice]+"+";//solo para test
             if (e.KeyChar==parrafo[Indice]||(parrafo[Indice]=='\n'&&e.KeyChar=='\r')){//si son el mismo caracter 
@@ -287,6 +297,8 @@ namespace Typing.Presentacion
             richTextBoxPrincipal.Select(Indice, 1);//marcamos el sig. caracter el que toca teclear
             if (Indice == parrafo.Length)
             {//si recorremos el final de la cadena
+                tmrTiempo.Enabled = false;
+                lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
                 MessageBox.Show(String.Format("total PUlsa:{0}\nCorrectos: {1}\nIncorrectos: {2} ", (PulsaCorrectos + PulsaErrores), PulsaCorrectos, PulsaErrores));
                 return;
             }
@@ -313,6 +325,18 @@ namespace Typing.Presentacion
 
         }
 
+        private void tmrTiempo_Tick(object sender, EventArgs e)
+        {
+            //eventos para tiempo
+            segundos++;
+            lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
+            double aux = ((double)parrafo.Length / 100);
+            double aux1 = (double)PulsaErrores / aux;
+            lblErrores.Text = PulsaErrores.ToString() + " de " + parrafo.Length.ToString() + " [" +(int)aux1+ "%]";
+            lblPPM.Text = ((int)((60.0 / (double)segundos) * PulsaCorrectos)).ToString();
+            
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -328,13 +352,14 @@ namespace Typing.Presentacion
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
+            limpiarLabels();
             if (llamadaInterna)
             {
                 cargarInicio();
             }
             else
             {
-                cargarInicio(parrafo,Convert.ToInt32(lblNivel.Text),Convert.ToInt32(lblLeccion));
+                cargarInicio(parrafo,Convert.ToInt32(lblNivel.Text),Convert.ToInt32(lblLeccion.Text));
             }
         }
 
@@ -368,7 +393,7 @@ namespace Typing.Presentacion
 
         private void btnReloj_Click(object sender, EventArgs e)
         {
-            
+            tmrTiempo.Enabled = !tmrTiempo.Enabled;
         }
 
         private void lblErrores_Click(object sender, EventArgs e)
