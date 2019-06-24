@@ -61,66 +61,89 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Leccion : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(264, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nivel : ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(371, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(62, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Leccion";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(63, 18);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(74, 18);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(10, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(12, 16);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = " ";
             // 
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
-            this.lblNivel.Location = new System.Drawing.Point(301, 18);
+            this.lblNivel.BackColor = System.Drawing.Color.Transparent;
+            this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(308, 18);
             this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(10, 13);
+            this.lblNivel.Size = new System.Drawing.Size(12, 16);
             this.lblNivel.TabIndex = 4;
             this.lblNivel.Text = " ";
             // 
             // lblLeccion
             // 
             this.lblLeccion.AutoSize = true;
-            this.lblLeccion.Location = new System.Drawing.Point(422, 18);
+            this.lblLeccion.BackColor = System.Drawing.Color.Transparent;
+            this.lblLeccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLeccion.ForeColor = System.Drawing.Color.White;
+            this.lblLeccion.Location = new System.Drawing.Point(439, 18);
             this.lblLeccion.Name = "lblLeccion";
-            this.lblLeccion.Size = new System.Drawing.Size(10, 13);
+            this.lblLeccion.Size = new System.Drawing.Size(12, 16);
             this.lblLeccion.TabIndex = 5;
             this.lblLeccion.Text = " ";
             this.lblLeccion.Click += new System.EventHandler(this.lblLeccion_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(601, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBoxTeclado
@@ -152,64 +175,97 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(513, 333);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(495, 333);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "P.P.M.";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(554, 333);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(548, 333);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "A Conseguir";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblAConseguir
             // 
             this.lblAConseguir.AutoSize = true;
-            this.lblAConseguir.Location = new System.Drawing.Point(572, 357);
+            this.lblAConseguir.BackColor = System.Drawing.Color.Transparent;
+            this.lblAConseguir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAConseguir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAConseguir.ForeColor = System.Drawing.Color.White;
+            this.lblAConseguir.Location = new System.Drawing.Point(568, 357);
             this.lblAConseguir.Name = "lblAConseguir";
-            this.lblAConseguir.Size = new System.Drawing.Size(10, 13);
+            this.lblAConseguir.Size = new System.Drawing.Size(11, 13);
             this.lblAConseguir.TabIndex = 15;
             this.lblAConseguir.Text = " ";
+            this.lblAConseguir.Click += new System.EventHandler(this.lblAConseguir_Click);
             // 
             // lblPPM
             // 
             this.lblPPM.AutoSize = true;
-            this.lblPPM.Location = new System.Drawing.Point(523, 357);
+            this.lblPPM.BackColor = System.Drawing.Color.Transparent;
+            this.lblPPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPPM.ForeColor = System.Drawing.Color.White;
+            this.lblPPM.Location = new System.Drawing.Point(519, 357);
             this.lblPPM.Name = "lblPPM";
-            this.lblPPM.Size = new System.Drawing.Size(10, 13);
+            this.lblPPM.Size = new System.Drawing.Size(11, 13);
             this.lblPPM.TabIndex = 14;
             this.lblPPM.Text = " ";
+            this.lblPPM.Click += new System.EventHandler(this.lblPPM_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(513, 275);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(509, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.Size = new System.Drawing.Size(121, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Pulsaciones Totales";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblPulsacionesTotales
             // 
             this.lblPulsacionesTotales.AutoSize = true;
-            this.lblPulsacionesTotales.Location = new System.Drawing.Point(547, 299);
+            this.lblPulsacionesTotales.BackColor = System.Drawing.Color.Transparent;
+            this.lblPulsacionesTotales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPulsacionesTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPulsacionesTotales.ForeColor = System.Drawing.Color.White;
+            this.lblPulsacionesTotales.Location = new System.Drawing.Point(543, 299);
             this.lblPulsacionesTotales.Name = "lblPulsacionesTotales";
-            this.lblPulsacionesTotales.Size = new System.Drawing.Size(10, 13);
+            this.lblPulsacionesTotales.Size = new System.Drawing.Size(11, 13);
             this.lblPulsacionesTotales.TabIndex = 13;
             this.lblPulsacionesTotales.Text = " ";
+            this.lblPulsacionesTotales.Click += new System.EventHandler(this.lblPulsacionesTotales_Click);
             // 
             // lblErrores
             // 
             this.lblErrores.AutoSize = true;
-            this.lblErrores.Location = new System.Drawing.Point(513, 415);
+            this.lblErrores.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblErrores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrores.ForeColor = System.Drawing.Color.White;
+            this.lblErrores.Location = new System.Drawing.Point(509, 415);
             this.lblErrores.Name = "lblErrores";
-            this.lblErrores.Size = new System.Drawing.Size(10, 13);
+            this.lblErrores.Size = new System.Drawing.Size(11, 13);
             this.lblErrores.TabIndex = 17;
             this.lblErrores.Text = " ";
             this.lblErrores.Click += new System.EventHandler(this.lblErrores_Click);
@@ -217,30 +273,45 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(533, 391);
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(529, 391);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 16;
             this.label11.Text = "Errores";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // btnReiniciar
             // 
-            this.btnReiniciar.Location = new System.Drawing.Point(562, 453);
+            this.btnReiniciar.BackColor = System.Drawing.Color.Transparent;
+            this.btnReiniciar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(227)))), ((int)(((byte)(252)))));
+            this.btnReiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReiniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.ForeColor = System.Drawing.Color.White;
+            this.btnReiniciar.Location = new System.Drawing.Point(546, 462);
             this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(55, 56);
+            this.btnReiniciar.Size = new System.Drawing.Size(72, 46);
             this.btnReiniciar.TabIndex = 18;
             this.btnReiniciar.Text = "Reinicio";
-            this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.UseVisualStyleBackColor = false;
             this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // btnReloj
             // 
-            this.btnReloj.Location = new System.Drawing.Point(485, 453);
+            this.btnReloj.BackColor = System.Drawing.Color.Transparent;
+            this.btnReloj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(227)))), ((int)(((byte)(252)))));
+            this.btnReloj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReloj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReloj.ForeColor = System.Drawing.Color.White;
+            this.btnReloj.Location = new System.Drawing.Point(463, 464);
             this.btnReloj.Name = "btnReloj";
-            this.btnReloj.Size = new System.Drawing.Size(63, 55);
+            this.btnReloj.Size = new System.Drawing.Size(77, 45);
             this.btnReloj.TabIndex = 19;
             this.btnReloj.Text = "Reloj";
-            this.btnReloj.UseVisualStyleBackColor = true;
+            this.btnReloj.UseVisualStyleBackColor = false;
             this.btnReloj.Click += new System.EventHandler(this.btnReloj_Click);
             // 
             // tmrTiempo
@@ -251,38 +322,50 @@
             // checkBoxPulsarTecla
             // 
             this.checkBoxPulsarTecla.AutoSize = true;
+            this.checkBoxPulsarTecla.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxPulsarTecla.Checked = true;
             this.checkBoxPulsarTecla.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPulsarTecla.Location = new System.Drawing.Point(352, 491);
+            this.checkBoxPulsarTecla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPulsarTecla.ForeColor = System.Drawing.Color.White;
+            this.checkBoxPulsarTecla.Location = new System.Drawing.Point(322, 487);
             this.checkBoxPulsarTecla.Name = "checkBoxPulsarTecla";
-            this.checkBoxPulsarTecla.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxPulsarTecla.Size = new System.Drawing.Size(125, 19);
             this.checkBoxPulsarTecla.TabIndex = 20;
             this.checkBoxPulsarTecla.Text = "Teclas a Pulsar";
-            this.checkBoxPulsarTecla.UseVisualStyleBackColor = true;
+            this.checkBoxPulsarTecla.UseVisualStyleBackColor = false;
+            this.checkBoxPulsarTecla.CheckedChanged += new System.EventHandler(this.checkBoxPulsarTecla_CheckedChanged);
             // 
             // checkBoxOcultarTeclado
             // 
             this.checkBoxOcultarTeclado.AutoSize = true;
+            this.checkBoxOcultarTeclado.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxOcultarTeclado.Checked = true;
             this.checkBoxOcultarTeclado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxOcultarTeclado.Location = new System.Drawing.Point(352, 472);
+            this.checkBoxOcultarTeclado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxOcultarTeclado.ForeColor = System.Drawing.Color.White;
+            this.checkBoxOcultarTeclado.Location = new System.Drawing.Point(322, 468);
             this.checkBoxOcultarTeclado.Name = "checkBoxOcultarTeclado";
-            this.checkBoxOcultarTeclado.Size = new System.Drawing.Size(65, 17);
+            this.checkBoxOcultarTeclado.Size = new System.Drawing.Size(77, 19);
             this.checkBoxOcultarTeclado.TabIndex = 21;
             this.checkBoxOcultarTeclado.Text = "Teclado";
-            this.checkBoxOcultarTeclado.UseVisualStyleBackColor = true;
+            this.checkBoxOcultarTeclado.UseVisualStyleBackColor = false;
+            this.checkBoxOcultarTeclado.CheckedChanged += new System.EventHandler(this.checkBoxOcultarTeclado_CheckedChanged);
             // 
             // checkBoxDedos
             // 
             this.checkBoxDedos.AutoSize = true;
+            this.checkBoxDedos.BackColor = System.Drawing.Color.Transparent;
             this.checkBoxDedos.Checked = true;
             this.checkBoxDedos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDedos.Location = new System.Drawing.Point(352, 453);
+            this.checkBoxDedos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDedos.ForeColor = System.Drawing.Color.White;
+            this.checkBoxDedos.Location = new System.Drawing.Point(322, 449);
             this.checkBoxDedos.Name = "checkBoxDedos";
-            this.checkBoxDedos.Size = new System.Drawing.Size(105, 17);
+            this.checkBoxDedos.Size = new System.Drawing.Size(135, 19);
             this.checkBoxDedos.TabIndex = 22;
             this.checkBoxDedos.Text = "Dedos Utilizados";
-            this.checkBoxDedos.UseVisualStyleBackColor = true;
+            this.checkBoxDedos.UseVisualStyleBackColor = false;
+            this.checkBoxDedos.CheckedChanged += new System.EventHandler(this.checkBoxDedos_CheckedChanged);
             // 
             // richTextBoxPrincipal
             // 
@@ -290,6 +373,7 @@
             this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPrincipal.ForeColor = System.Drawing.Color.Maroon;
             this.richTextBoxPrincipal.Location = new System.Drawing.Point(13, 41);
             this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
             this.richTextBoxPrincipal.ReadOnly = true;
@@ -307,6 +391,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(628, 521);
             this.Controls.Add(this.richTextBoxPrincipal);
             this.Controls.Add(this.btnReloj);

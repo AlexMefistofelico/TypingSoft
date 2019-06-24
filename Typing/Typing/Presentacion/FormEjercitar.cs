@@ -76,7 +76,7 @@ namespace Typing.Presentacion
                 pulsaAconseguir *= Convert.ToInt32(objUsuario.Modo);
                 lblAConseguir.Text = pulsaAconseguir.ToString();
             }
-            parrafo = parrafo.Replace("\r\n", "\n");
+            parrafo = parrafo.Replace("\r\n", "\n").ToUpper();
             richTextBoxPrincipal.Text = parrafo;
             /***si es un caracter***/
             dobleTecla = Char.IsUpper(parrafo[0]) ||
@@ -103,7 +103,7 @@ namespace Typing.Presentacion
             ClError = Color.Red;
             Indice = PulsaCorrectos = PulsaErrores = 0;
             parrafo = p.Replace("\r\n", "\n");
-            richTextBoxPrincipal.Text = parrafo;
+            richTextBoxPrincipal.Text = parrafo;//modificado
             /***si es un caracter***/
             dobleTecla = Char.IsUpper(parrafo[0]) ||
                                  parrafo[0] == 'á' ||
@@ -378,6 +378,57 @@ namespace Typing.Presentacion
         private void richTextBoxPrincipal_KeyDown(object sender, KeyEventArgs e){
 
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAConseguir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPPM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPulsacionesTotales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxDedos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxOcultarTeclado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxPulsarTecla_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void richTextBoxPrincipal_TextChanged(object sender, EventArgs e)
         {
 
@@ -428,13 +479,14 @@ namespace Typing.Presentacion
 
         private void pictureBoxTeclado_Click(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void pictureBoxTeclado_MouseClick(object sender, MouseEventArgs e)
         {
             //dentro de el teclado de para hallar x,y del cada una de las teclas
             dibujarEnTeclado();
+            lblUsuario.Text = e.X + " - " + e.Y;
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)

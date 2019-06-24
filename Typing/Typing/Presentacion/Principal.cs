@@ -47,7 +47,7 @@ namespace Typing.Presentacion {
                 int max = 0,sum =0,i,j = lista.Count() - 1;
                 string cad = "";
                 Panel[] vectPanel = {pnlColor1,pnlColor2,pnlColor3,pnlColor4,pnlColor5,pnlColor6,pnlColor7,pnlColor8,pnlColor9,pnlColor10};
-                Color[] vectColor = { Color.CadetBlue,Color.Chartreuse,Color.Cyan,Color.DarkBlue,Color.DarkCyan,Color.Cornsilk,Color.DarkCyan, Color.CadetBlue, Color.Chartreuse, Color.Cyan};
+                Color[] vectColor = { RGB(190, 67, 10), RGB(247,128,38), RGB(250,164,27), RGB(254,190,22), RGB(160,208,34), RGB(122,198,52), RGB(72,193,40), RGB(26,171,130), RGB(41,145,182), RGB(2,83,149) };
                 Label[] vectLabel = { label4,label5,label6,label7,label8,label9,label10,label11,label12,label13 };
                 for (i=0;i<10&&j>=0;i++)
                 {
@@ -57,7 +57,7 @@ namespace Typing.Presentacion {
                  //   cad += lista[j--];
                    // cad += " ";
                 }
-                label1.Text = "jhoselinm";
+                //label1.Text = "jhoselinm";
                 j = lista.Count() - 1;
                 for (i = 0; i < 10 && j >= 0; i++)
                 {
@@ -79,7 +79,7 @@ namespace Typing.Presentacion {
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TypingSoft","Acerca De: ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("TypingSoft\nChoque Clemente Alex Ariel\nGutierrez Mendoza Maria Alejandra\nTangara Marce Martha\nVillca Canqui Carla Veronica", "Acerca De: ",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
         }
 
@@ -140,6 +140,11 @@ namespace Typing.Presentacion {
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
         {
 
         }
