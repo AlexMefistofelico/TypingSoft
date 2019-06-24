@@ -48,16 +48,22 @@ namespace Typing.Presentacion
         {
             using (var db = new TYPINGEntities())
             {
-                int id = Convert.ToInt32(dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentCellAddress.Y].Cells[0].Value);
-                var reg = db.USUARIO.Where(x => x.UsuarioID == id).FirstOrDefault();
-                if(MessageBox.Show("Desea Eliminar Dato", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                try
                 {
-
-                    db.USUARIO.Remove(reg);
-                    db.SaveChanges();
+                    int id = Convert.ToInt32(dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentCellAddress.Y].Cells[0].Value);
+                    var reg = db.USUARIO.Where(x => x.UsuarioID == id).FirstOrDefault();
+                    if (MessageBox.Show("Desea Eliminar Dato", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        db.USUARIO.Remove(reg);
+                        db.SaveChanges();
+                    }
 
                 }
+                catch (Exception err)
+                {
+                    MessageBox.Show("No se puede Eliminar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
+                }
             }
             cargarDatos();
         }
@@ -65,12 +71,15 @@ namespace Typing.Presentacion
         private void btnOK_Click(object sender, EventArgs e)
         {
             FormEjercitar frmEjer = new FormEjercitar();
+
             using (var db = new TYPINGEntities())
             {
                 int id = Convert.ToInt32(dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentCellAddress.Y].Cells[0].Value);
                 var reg = db.USUARIO.Where(x => x.UsuarioID == id).FirstOrDefault();
                 frmEjer.objIdUsuario = reg.UsuarioID;
                 frmEjer.objUsuario = reg;
+                Principal.ID = id;
+                Principal.inicio = false;
             }
             frmEjer.ShowDialog(); 
             //cargarDatos();

@@ -47,9 +47,15 @@ namespace Typing.Presentacion
                     lblUsuario.Text = objUsuario.Nombre;
                     /****desde aqui revisar**/
                     idlec = Convert.ToInt32((from pro in db.PROGRESO where pro.UsuarioID == objIdUsuario select pro.Leccion).Max())+1;
-                                        /****desde aqui revisar**/
+                    /****desde aqui revisar**/
 
                     int valor = Convert.ToInt32(db.LECCION.Select(x => x.LeccionID).Max());//sacamos cuantas lecciones
+                    if (idlec > valor)
+                    {
+                        MessageBox.Show("Felicidades "+objUsuario.Nombre,"Fin Curso Elije Otro Modo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        Close();
+                        return;
+                    }
                     int Modulo = valor / 6;
                     if (valor % 6 != 0) Modulo++;
                     double nivelAux = (double)idlec / Modulo;

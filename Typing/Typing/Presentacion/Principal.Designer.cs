@@ -42,15 +42,25 @@
             this.lblPPM = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlColor4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlColor10 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnlColor3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlColor9 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnlColor8 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlColor7 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnlColor6 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlColor5 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlColor2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlColor1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +181,17 @@
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.Black;
+            this.pnlPrincipal.Controls.Add(this.label13);
+            this.pnlPrincipal.Controls.Add(this.label12);
+            this.pnlPrincipal.Controls.Add(this.label11);
+            this.pnlPrincipal.Controls.Add(this.label10);
+            this.pnlPrincipal.Controls.Add(this.label9);
+            this.pnlPrincipal.Controls.Add(this.label8);
+            this.pnlPrincipal.Controls.Add(this.label7);
+            this.pnlPrincipal.Controls.Add(this.label6);
+            this.pnlPrincipal.Controls.Add(this.label5);
+            this.pnlPrincipal.Controls.Add(this.label4);
             this.pnlPrincipal.Controls.Add(this.pnlColor4);
             this.pnlPrincipal.Controls.Add(this.pnlColor10);
             this.pnlPrincipal.Controls.Add(this.pnlColor3);
@@ -185,86 +206,199 @@
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(553, 232);
             this.pnlPrincipal.TabIndex = 14;
+            this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             // 
             // pnlColor4
             // 
             this.pnlColor4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor4.Location = new System.Drawing.Point(175, 81);
+            this.pnlColor4.Location = new System.Drawing.Point(175, 73);
             this.pnlColor4.Name = "pnlColor4";
             this.pnlColor4.Size = new System.Drawing.Size(50, 137);
             this.pnlColor4.TabIndex = 3;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(174, 213);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "label7";
+            // 
             // pnlColor10
             // 
             this.pnlColor10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor10.Location = new System.Drawing.Point(493, 81);
+            this.pnlColor10.Location = new System.Drawing.Point(493, 73);
             this.pnlColor10.Name = "pnlColor10";
             this.pnlColor10.Size = new System.Drawing.Size(50, 137);
             this.pnlColor10.TabIndex = 3;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(491, 211);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 16);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "label13";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // pnlColor3
             // 
             this.pnlColor3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor3.Location = new System.Drawing.Point(122, 81);
+            this.pnlColor3.Location = new System.Drawing.Point(122, 73);
             this.pnlColor3.Name = "pnlColor3";
             this.pnlColor3.Size = new System.Drawing.Size(50, 137);
             this.pnlColor3.TabIndex = 3;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(123, 213);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "label6";
+            // 
             // pnlColor9
             // 
             this.pnlColor9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor9.Location = new System.Drawing.Point(440, 81);
+            this.pnlColor9.Location = new System.Drawing.Point(440, 73);
             this.pnlColor9.Name = "pnlColor9";
             this.pnlColor9.Size = new System.Drawing.Size(50, 137);
             this.pnlColor9.TabIndex = 1;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(437, 211);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "label12";
+            // 
             // pnlColor8
             // 
             this.pnlColor8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor8.Location = new System.Drawing.Point(387, 81);
+            this.pnlColor8.Location = new System.Drawing.Point(387, 73);
             this.pnlColor8.Name = "pnlColor8";
             this.pnlColor8.Size = new System.Drawing.Size(50, 137);
             this.pnlColor8.TabIndex = 1;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(384, 211);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "label11";
+            // 
             // pnlColor7
             // 
             this.pnlColor7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor7.Location = new System.Drawing.Point(334, 81);
+            this.pnlColor7.Location = new System.Drawing.Point(334, 73);
             this.pnlColor7.Name = "pnlColor7";
             this.pnlColor7.Size = new System.Drawing.Size(50, 137);
             this.pnlColor7.TabIndex = 1;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(331, 211);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 16);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "label10";
+            // 
             // pnlColor6
             // 
             this.pnlColor6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor6.Location = new System.Drawing.Point(281, 81);
+            this.pnlColor6.Location = new System.Drawing.Point(281, 73);
             this.pnlColor6.Name = "pnlColor6";
             this.pnlColor6.Size = new System.Drawing.Size(50, 137);
             this.pnlColor6.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(280, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 16);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "label9";
+            // 
             // pnlColor5
             // 
             this.pnlColor5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor5.Location = new System.Drawing.Point(228, 81);
+            this.pnlColor5.Location = new System.Drawing.Point(228, 73);
             this.pnlColor5.Name = "pnlColor5";
             this.pnlColor5.Size = new System.Drawing.Size(50, 137);
             this.pnlColor5.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(227, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "label8";
+            // 
             // pnlColor2
             // 
             this.pnlColor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor2.Location = new System.Drawing.Point(69, 81);
+            this.pnlColor2.Location = new System.Drawing.Point(69, 73);
             this.pnlColor2.Name = "pnlColor2";
             this.pnlColor2.Size = new System.Drawing.Size(50, 137);
             this.pnlColor2.TabIndex = 1;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(68, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 16);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "label5";
+            // 
             // pnlColor1
             // 
             this.pnlColor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pnlColor1.Location = new System.Drawing.Point(16, 81);
+            this.pnlColor1.Location = new System.Drawing.Point(16, 73);
             this.pnlColor1.Name = "pnlColor1";
             this.pnlColor1.Size = new System.Drawing.Size(50, 137);
             this.pnlColor1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(15, 213);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Principal
             // 
@@ -289,9 +423,10 @@
             this.MaximizeBox = false;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Principal";
+            this.Text = "la";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +457,15 @@
         private System.Windows.Forms.Panel pnlColor5;
         private System.Windows.Forms.Panel pnlColor2;
         private System.Windows.Forms.Panel pnlColor1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

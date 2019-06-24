@@ -66,9 +66,7 @@ axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m
 axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m axcv ñ.,m
 ',50);
 --nivel 4
-INSERT INTO LECCION VALUES(13,'axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm
-axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm
-axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm axcvbv ñ.,mnm
+INSERT INTO LECCION VALUES(13,'o tuyo
 ',60);
 INSERT INTO LECCION VALUES(14,'a23454 ñ98767 a23454 ñ98767 a23454 ñ98767 a23454 ñ98767
 a23454 ñ98767 a23454 ñ98767 a23454 ñ98767 a23454 ñ98767
@@ -152,9 +150,37 @@ Insert into USUARIO values (1,6,'Maste');
 Insert Into PROGRESO values (1,1,'03/06/2019',400,28,5);
 update USUARIO set Nombre = 'Master' where UsuarioID = 1
 delete from USUARIO where UsuarioID = 2
-delete from PROGRESO where ProgresoID = 2
+delete from PROGRESO where ProgresoID = 1
 
 use TYPING
 select * from USUARIO
-select * from LECCION
-select * from PROGRESO
+select * from LECCION 
+
+Insert Into PROGRESO values (1,1,'03/06/2019',400,1,1);
+Insert Into PROGRESO values (2,1,'03/06/2019',400,2,1);
+Insert Into PROGRESO values (3,1,'03/06/2019',400,3,1);
+Insert Into PROGRESO values (4,1,'03/06/2019',400,4,1);
+Insert Into PROGRESO values (5,1,'03/06/2019',400,5,1);
+Insert Into PROGRESO values (6,1,'03/06/2019',400,6,2);
+Insert Into PROGRESO values (7,1,'03/06/2019',400,7,2);
+Insert Into PROGRESO values (8,1,'03/06/2019',400,8,2);
+Insert Into PROGRESO values (9,1,'03/06/2019',445,9,2);
+Insert Into PROGRESO values (10,1,'03/06/2019',400,10,2);
+Insert Into PROGRESO values (11,1,'03/06/2019',444,11,3);
+Insert Into PROGRESO values (12,1,'03/06/2019',400,12,3);
+Insert Into PROGRESO values (13,1,'03/06/2019',466,13,3);
+Insert Into PROGRESO values (14,1,'03/06/2019',400,14,3);
+Insert Into PROGRESO values (15,1,'03/06/2019',477,15,3);
+Insert Into PROGRESO values (16,1,'03/06/2019',400,16,4);
+Insert Into PROGRESO values (17,1,'03/06/2019',404,17,4);
+Insert Into PROGRESO values (18,1,'03/06/2019',404,18,4);
+Insert Into PROGRESO values (19,1,'03/06/2019',405,19,4);
+Insert Into PROGRESO values (20,1,'03/06/2019',434,20,4);
+Insert Into PROGRESO values (21,1,'03/06/2019',433,21,5);
+Insert Into PROGRESO values (22,1,'03/06/2019',477,22,5);
+Insert Into PROGRESO values (23,1,'03/06/2019',470,23,5);
+Insert Into PROGRESO values (24,1,'03/06/2019',405,24,5);
+Insert Into PROGRESO values (25,1,'03/06/2019',444,25,5);
+Insert Into PROGRESO values (26,1,'03/06/2019',400,26,6);
+Insert Into PROGRESO values (27,1,'03/06/2019',453,27,6);
+Insert Into PROGRESO values (28,1,'03/06/2019',450,28,6);
