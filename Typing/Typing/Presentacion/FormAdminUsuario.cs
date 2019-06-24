@@ -61,5 +61,20 @@ namespace Typing.Presentacion
             }
             cargarDatos();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            FormEjercitar frmEjer = new FormEjercitar();
+            using (var db = new TYPINGEntities())
+            {
+                int id = Convert.ToInt32(dataGridViewUsuarios.Rows[dataGridViewUsuarios.CurrentCellAddress.Y].Cells[0].Value);
+                var reg = db.USUARIO.Where(x => x.UsuarioID == id).FirstOrDefault();
+                frmEjer.objIdUsuario = reg.UsuarioID;
+                frmEjer.objUsuario = reg;
+            }
+            frmEjer.ShowDialog(); 
+            //cargarDatos();
+        }
+
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TYPINGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TYPINGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LECCION">
           <Key>
             <PropertyRef Name="LeccionID" />
@@ -21,8 +21,6 @@
           <Property Name="UsuarioID" Type="int" />
           <Property Name="LeccionID" Type="int" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'TYPING.dbo.PROGRESO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="PROGRESO">
           <Key>
             <PropertyRef Name="ProgresoID" />
@@ -66,7 +64,7 @@ advertencia 6002: La tabla o vista 'TYPING.dbo.PROGRESO' no tiene definida ningu
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PROGRESO__Usuari__173876EA">
+        <Association Name="FK__PROGRESO__Usuari__239E4DCF">
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
           <End Role="PROGRESO" Type="Self.PROGRESO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,17 +79,8 @@ advertencia 6002: La tabla o vista 'TYPING.dbo.PROGRESO' no tiene definida ningu
         <EntityContainer Name="TYPINGModelStoreContainer">
           <EntitySet Name="LECCION" EntityType="Self.LECCION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NIVEL" EntityType="Self.NIVEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROGRESO" EntityType="Self.PROGRESO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PROGRESO" EntityType="Self.PROGRESO" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PROGRESO].[ProgresoID] AS [ProgresoID], 
-    [PROGRESO].[UsuarioID] AS [UsuarioID], 
-    [PROGRESO].[Fecha] AS [Fecha], 
-    [PROGRESO].[PPMC] AS [PPMC], 
-    [PROGRESO].[Leccion] AS [Leccion], 
-    [PROGRESO].[Nivel] AS [Nivel]
-    FROM [dbo].[PROGRESO] AS [PROGRESO]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__NIVEL__LeccionID__15502E78" Association="Self.FK__NIVEL__LeccionID__15502E78">
             <End Role="LECCION" EntitySet="LECCION" />
             <End Role="NIVEL" EntitySet="NIVEL" />
@@ -100,13 +89,12 @@ advertencia 6002: La tabla o vista 'TYPING.dbo.PROGRESO' no tiene definida ningu
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="NIVEL" EntitySet="NIVEL" />
           </AssociationSet>
-          <AssociationSet Name="FK__PROGRESO__Usuari__173876EA" Association="Self.FK__PROGRESO__Usuari__173876EA">
+          <AssociationSet Name="FK__PROGRESO__Usuari__239E4DCF" Association="Self.FK__PROGRESO__Usuari__239E4DCF">
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PROGRESO" EntitySet="PROGRESO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TYPINGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

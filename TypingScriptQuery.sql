@@ -149,10 +149,12 @@ zyxwvutsrqpoñnmlkjihgfedcba. zyxwvutsrqpoñnmlkjihgfedcba.
 --INSERT INTO LECCION VALUES(27,'',90);
 --INSERT INTO LECCION VALUES(28,'',90);
 Insert into USUARIO values (1,6,'Maste'); 
-
+Insert Into PROGRESO values (1,1,'03/06/2019',400,28,5);
 update USUARIO set Nombre = 'Master' where UsuarioID = 1
 delete from USUARIO where UsuarioID = 2
+delete from PROGRESO where ProgresoID = 2
 
 use TYPING
 select * from USUARIO
 select * from LECCION
+select * from PROGRESO

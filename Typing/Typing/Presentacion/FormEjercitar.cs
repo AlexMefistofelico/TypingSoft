@@ -13,31 +13,62 @@ namespace Typing.Presentacion
     public partial class FormEjercitar : Form
     {
         public String parrafo;
-        public int Indice, PulsaCorrectos, PulsaErrores;
+        public int Indice, PulsaCorrectos, PulsaErrores,pulsaAconseguir;
         public Color ClCorrecto, ClError;
         public Pen lapizTeclado, lapizMano;
-        public int x_teclado, y_teclado, x_mano, y_mano, x_t, y_t, x_m, y_m,segundos;
+        public int objIdUsuario, x_teclado, y_teclado, x_mano, y_mano, x_t, y_t, x_m, y_m,segundos;
         public bool dobleTecla,llamadaInterna;
+        public USUARIO objUsuario;
         public FormEjercitar()
         {
             segundos = 0;
             llamadaInterna = true;
             lapizTeclado = new Pen(Color.Orange, 8);
             lapizMano = new Pen(Color.Cyan, 6);
-
             InitializeComponent();
+            pulsaAconseguir = 200;
         }
 
         private void button1_Click(object sender, EventArgs e) { this.Close(); }
+
         public void cargarInicio()
         {
             llamadaInterna = true;
             ClCorrecto = Color.Cyan;
             ClError = Color.Red;
             Indice = PulsaCorrectos = PulsaErrores = 0;
+            
             using (var db = new TYPINGEntities())
             {
-                parrafo = (from texto in db.LECCION where texto.LeccionID == 28 select texto.Parrafo).FirstOrDefault().ToString();
+                int auxLecPPM,nivel=0,idlec = 1;
+                try
+                {
+                    objUsuario = (from us in db.USUARIO where us.UsuarioID == objIdUsuario select us).FirstOrDefault();
+                    lblUsuario.Text = objUsuario.Nombre;
+                    /****desde aqui revisar**/
+                    idlec = Convert.ToInt32((from pro in db.PROGRESO where pro.UsuarioID == objIdUsuario select pro.Leccion).Max())+1;
+                                        /****desde aqui revisar**/
+
+                    int valor = Convert.ToInt32(db.LECCION.Select(x => x.LeccionID).Max());//sacamos cuantas lecciones
+                    int Modulo = valor / 6;
+                    if (valor % 6 != 0) Modulo++;
+                    double nivelAux = (double)idlec / Modulo;
+                    nivel = (int)nivelAux;
+                    if (nivel != nivelAux) nivel++; 
+                   
+                }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show("Usuario Nuevo Bienvenido...","Inicio",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                lblLeccion.Text = idlec.ToString();
+                lblNivel.Text = nivel.ToString();
+                var regLeccion = (from texto in db.LECCION where texto.LeccionID == idlec select texto).FirstOrDefault();
+
+                parrafo = regLeccion.Parrafo.ToString();
+                pulsaAconseguir = Convert.ToInt32(regLeccion.PPM);
+                pulsaAconseguir *= Convert.ToInt32(objUsuario.Modo);
+                lblAConseguir.Text = pulsaAconseguir.ToString();
             }
             parrafo = parrafo.Replace("\r\n", "\n");
             richTextBoxPrincipal.Text = parrafo;
@@ -299,7 +330,28 @@ namespace Typing.Presentacion
             {//si recorremos el final de la cadena
                 tmrTiempo.Enabled = false;
                 lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
+                if (llamadaInterna && PulsaErrores <= 5 && Convert.ToInt32(lblPPM.Text) >= pulsaAconseguir)
+                {
+
+                    guardarProgreso();
+                }
+                else if (llamadaInterna)
+                {
+                    MessageBox.Show("Sigue Intentando...","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+                }
+
                 MessageBox.Show(String.Format("total PUlsa:{0}\nCorrectos: {1}\nIncorrectos: {2} ", (PulsaCorrectos + PulsaErrores), PulsaCorrectos, PulsaErrores));
+                ///desde aqui para pasar a un sig nivel
+                limpiarLabels();
+                if (llamadaInterna)
+                {
+                    cargarInicio();
+                }
+                else
+                {
+                    cargarInicio(parrafo, Convert.ToInt32(lblNivel.Text), Convert.ToInt32(lblLeccion.Text));
+                }
                 return;
             }
             dibujar(parrafo[Indice]);//mandamos el char marcado para tipear para saber con que dedos hacerlo...                                    
@@ -391,10 +443,55 @@ namespace Typing.Presentacion
                 e.Graphics.DrawEllipse(lapizMano, x_m, y_m, 8, 8);
         }
 
-        private void btnReloj_Click(object sender, EventArgs e)
+        private void btnReloj_Click(object sender, EventArgs e)///relog
         {
             tmrTiempo.Enabled = !tmrTiempo.Enabled;
         }
+
+        public void guardarProgreso()
+        {
+            using (TYPINGEntities db = new TYPINGEntities())
+            {
+                PROGRESO progreso = null;
+                try
+                {
+                    int progresoid = db.PROGRESO.Select(x => x.ProgresoID).Max() + 1;
+                    int usuarioid = db.USUARIO.Where(x => x.Nombre == lblUsuario.Text).FirstOrDefault().UsuarioID;
+                    DateTime fecha = DateTime.Now;
+                    int ppmc = Convert.ToInt32(lblPPM.Text);
+                    int leccion = Convert.ToInt32(lblLeccion.Text);
+                    int nivel = Convert.ToInt32(lblNivel.Text);
+                   
+                    progreso = new PROGRESO
+                    {
+                        ProgresoID = progresoid,
+                        UsuarioID = usuarioid,
+                        Fecha = fecha,
+                        PPMC = ppmc,
+                        Leccion = leccion,
+                        Nivel = nivel
+                    };
+
+                    MessageBox.Show("se creo objeto");
+
+                    db.PROGRESO.Add(progreso);
+                    db.SaveChanges();
+
+                    MessageBox.Show("se guardo objeto ");
+
+                    MessageBox.Show("Se Registro Progreso...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                
+                    MessageBox.Show("Ocurrio Un Error\n(No Se Registro Progreso)...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
+        }
+
 
         private void lblErrores_Click(object sender, EventArgs e)
         {
