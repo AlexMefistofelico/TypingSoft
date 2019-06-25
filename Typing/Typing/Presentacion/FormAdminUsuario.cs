@@ -81,8 +81,9 @@ namespace Typing.Presentacion
                 Principal.ID = id;
                 Principal.inicio = false;
             }
-            frmEjer.ShowDialog(); 
-            //cargarDatos();
+            this.Visible = false;
+            frmEjer.ShowDialog();
+            this.Visible = true;
         }
 
     }

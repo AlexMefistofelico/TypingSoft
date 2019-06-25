@@ -45,10 +45,9 @@ namespace Typing.Presentacion
                 {
                     objUsuario = (from us in db.USUARIO where us.UsuarioID == objIdUsuario select us).FirstOrDefault();
                     lblUsuario.Text = objUsuario.Nombre;
-                    /****desde aqui revisar**/
-                    idlec = Convert.ToInt32((from pro in db.PROGRESO where pro.UsuarioID == objIdUsuario select pro.Leccion).Max())+1;
-                    /****desde aqui revisar**/
 
+                    idlec = Convert.ToInt32((from pro in db.PROGRESO where pro.UsuarioID == objIdUsuario select pro.Leccion).Max())+1;
+                    
                     int valor = Convert.ToInt32(db.LECCION.Select(x => x.LeccionID).Max());//sacamos cuantas lecciones
                     if (idlec > valor)
                     {
@@ -76,7 +75,7 @@ namespace Typing.Presentacion
                 pulsaAconseguir *= Convert.ToInt32(objUsuario.Modo);
                 lblAConseguir.Text = pulsaAconseguir.ToString();
             }
-            parrafo = parrafo.Replace("\r\n", "\n").ToUpper();
+            parrafo = parrafo.Replace("\r\n", "\n");
             richTextBoxPrincipal.Text = parrafo;
             /***si es un caracter***/
             dobleTecla = Char.IsUpper(parrafo[0]) ||
@@ -338,16 +337,17 @@ namespace Typing.Presentacion
                 lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
                 if (llamadaInterna && PulsaErrores <= 5 && Convert.ToInt32(lblPPM.Text) >= pulsaAconseguir)
                 {
-
                     guardarProgreso();
                 }
                 else if (llamadaInterna)
                 {
-                    MessageBox.Show("Sigue Intentando...","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-
+                    if(Convert.ToInt32(lblPPM.Text) < pulsaAconseguir)
+                        MessageBox.Show("Sigue Intentando... Fue Un Poco Lento: "+PulsaErrores,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    if(PulsaErrores > 5)
+                        MessageBox.Show("Sigue Intentando... Errores: " + PulsaErrores, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                MessageBox.Show(String.Format("total PUlsa:{0}\nCorrectos: {1}\nIncorrectos: {2} ", (PulsaCorrectos + PulsaErrores), PulsaCorrectos, PulsaErrores));
+                MessageBox.Show(String.Format("TOTAL PULSACIONES: {0}\nCORRECTOS: {1}\nINCORRECTOS: {2} ", (PulsaCorrectos + PulsaErrores), PulsaCorrectos, PulsaErrores));
                 ///desde aqui para pasar a un sig nivel
                 limpiarLabels();
                 if (llamadaInterna)
@@ -375,67 +375,31 @@ namespace Typing.Presentacion
             pictureBox1_Paint(new object(), new PaintEventArgs(pictureBox1.CreateGraphics(), new Rectangle()));
         }
 
-        private void richTextBoxPrincipal_KeyDown(object sender, KeyEventArgs e){
+        private void richTextBoxPrincipal_KeyDown(object sender, KeyEventArgs e){}
 
-        }
+        private void label11_Click(object sender, EventArgs e){}
 
-        private void label11_Click(object sender, EventArgs e)
-        {
+        private void lblAConseguir_Click(object sender, EventArgs e){}
 
-        }
+        private void lblPPM_Click(object sender, EventArgs e){}
 
-        private void lblAConseguir_Click(object sender, EventArgs e)
-        {
+        private void lblPulsacionesTotales_Click(object sender, EventArgs e){}
 
-        }
+        private void label6_Click(object sender, EventArgs e){}
 
-        private void lblPPM_Click(object sender, EventArgs e)
-        {
+        private void label5_Click(object sender, EventArgs e){}
 
-        }
+        private void label4_Click(object sender, EventArgs e){}
 
-        private void lblPulsacionesTotales_Click(object sender, EventArgs e)
-        {
+        private void checkBoxDedos_CheckedChanged(object sender, EventArgs e){}
 
-        }
+        private void checkBoxOcultarTeclado_CheckedChanged(object sender, EventArgs e){}
 
-        private void label6_Click(object sender, EventArgs e)
-        {
+        private void checkBoxPulsarTecla_CheckedChanged(object sender, EventArgs e){}
 
-        }
+        private void richTextBoxPrincipal_TextChanged(object sender, EventArgs e){}
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxDedos_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxOcultarTeclado_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxPulsarTecla_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBoxPrincipal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tmrTiempo_Tick(object sender, EventArgs e)
-        {
+        private void tmrTiempo_Tick(object sender, EventArgs e){
             //eventos para tiempo
             segundos++;
             lblPulsacionesTotales.Text = (PulsaCorrectos + PulsaErrores).ToString();
@@ -446,19 +410,28 @@ namespace Typing.Presentacion
             
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+        private void panel1_Paint(object sender, PaintEventArgs e){}
 
-        }
-        
         private void pictureBoxTeclado_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawEllipse(lapizTeclado, x_teclado, y_teclado,9,9);
-            if(dobleTecla)
-                e.Graphics.DrawEllipse(lapizTeclado, x_t, y_t, 9, 9);
+            pictureBoxTeclado.Visible = checkBoxOcultarTeclado.Checked;
+
+            if (checkBoxPulsarTecla.Checked)
+            {
+                e.Graphics.DrawEllipse(lapizTeclado, x_teclado, y_teclado, 9, 9);
+                if (dobleTecla)
+                    e.Graphics.DrawEllipse(lapizTeclado, x_t, y_t, 9, 9);
+            }
         }
-
-
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {//paint de manos...
+            if (checkBoxDedos.Checked)
+            {
+                e.Graphics.DrawEllipse(lapizMano, x_mano, y_mano, 8, 8);
+                if (dobleTecla)
+                    e.Graphics.DrawEllipse(lapizMano, x_m, y_m, 8, 8);
+            }
+        }
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             limpiarLabels();
@@ -472,18 +445,13 @@ namespace Typing.Presentacion
             }
         }
 
-        private void pictureBoxTeclado_MouseEnter(object sender, EventArgs e)
-        {
-           
-        }
+        private void pictureBoxTeclado_MouseEnter(object sender, EventArgs e){}
 
-        private void pictureBoxTeclado_Click(object sender, EventArgs e)
-        {
-           
-        }
+        private void pictureBoxTeclado_Click(object sender, EventArgs e) { }
 
         private void pictureBoxTeclado_MouseClick(object sender, MouseEventArgs e)
         {
+            //SOLO ES PARA PRUEBAS Y HACER LOS DIBUJOS AYUDA DE TECLADO
             //dentro de el teclado de para hallar x,y del cada una de las teclas
             dibujarEnTeclado();
             lblUsuario.Text = e.X + " - " + e.Y;
@@ -494,12 +462,7 @@ namespace Typing.Presentacion
             dibujarEnMano();
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {//paint de manos...
-            e.Graphics.DrawEllipse(lapizMano, x_mano, y_mano, 8,8);
-            if(dobleTecla)
-                e.Graphics.DrawEllipse(lapizMano, x_m, y_m, 8, 8);
-        }
+      
 
         private void btnReloj_Click(object sender, EventArgs e)///relog
         {
@@ -529,14 +492,8 @@ namespace Typing.Presentacion
                         Leccion = leccion,
                         Nivel = nivel
                     };
-
-                    MessageBox.Show("se creo objeto");
-
                     db.PROGRESO.Add(progreso);
                     db.SaveChanges();
-
-                    MessageBox.Show("se guardo objeto ");
-
                     MessageBox.Show("Se Registro Progreso...", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -551,16 +508,10 @@ namespace Typing.Presentacion
         }
 
 
-        private void lblErrores_Click(object sender, EventArgs e)
-        {
-            
-        }
+        private void lblErrores_Click(object sender, EventArgs e){}
 
         private void richTextBoxPrincipal_Enter(object sender, EventArgs e){}
 
-        private void lblLeccion_Click(object sender, EventArgs e)
-        {
-               
-        }
+        private void lblLeccion_Click(object sender, EventArgs e){}
     }
 }

@@ -373,7 +373,7 @@
             this.richTextBoxPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBoxPrincipal.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPrincipal.ForeColor = System.Drawing.Color.Maroon;
+            this.richTextBoxPrincipal.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxPrincipal.Location = new System.Drawing.Point(13, 41);
             this.richTextBoxPrincipal.Name = "richTextBoxPrincipal";
             this.richTextBoxPrincipal.ReadOnly = true;
